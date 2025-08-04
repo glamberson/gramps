@@ -101,4 +101,4 @@ class Optimizer:
         Returns:
             True if both filters have the same class name (i.e., are of the same type), False otherwise.
         """
-        return self.top_level_filter.__class__.__name__ == filter.__class__.__name__
+        return type(self.top_level_filter) == type(filter)
