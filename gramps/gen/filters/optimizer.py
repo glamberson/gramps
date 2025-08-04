@@ -89,4 +89,16 @@ class Optimizer:
         return (None, None)
 
     def is_same_namespace(self, filter):
+        """
+        Determine if the given filter is in the 'same namespace' as the top-level filter.
+
+        In this context, 'same namespace' means that both filters are instances of the same class,
+        as determined by comparing their class names.
+
+        Parameters:
+            filter: The filter object to compare against the top-level filter.
+
+        Returns:
+            True if both filters have the same class name (i.e., are of the same type), False otherwise.
+        """
         return self.top_level_filter.__class__.__name__ == filter.__class__.__name__
